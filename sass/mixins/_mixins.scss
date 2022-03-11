@@ -1,0 +1,59 @@
+@use "../variables/variables";
+
+@mixin setHTML {
+    height: 100%;
+}
+
+@mixin setBody {
+    min-height: 100vh;
+    width: 100%;
+}
+
+@mixin resetSettings {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@mixin setContainer {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: variables.$paddingDesktop;
+    overflow: hidden;
+    outline: 2px solid red;
+}
+
+@mixin setNavContainer {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow: hidden;
+    outline: 2px solid red;
+}
+
+@mixin setHeightMarginTop {
+    min-height: calc(100vh - variables.$heightNavDesk);
+    margin-top: variables.$heightNavDesk;
+}
+
+@mixin buttonEffect {
+    animation: 1300ms efecto ease-in-out infinite alternate;
+
+    @keyframes efecto {
+
+        from {
+            background-color: rgba(0, 255, 187, 0.5);
+            box-shadow: 0 0 5px rgb(0, 255, 187);
+        }
+
+        to {
+            background-color: rgba(0, 255, 187, 1);
+            box-shadow: 0 0 20px rgb(0, 255, 187);
+        }
+
+    }
+
+}
