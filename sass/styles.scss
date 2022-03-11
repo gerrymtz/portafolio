@@ -130,6 +130,11 @@ body {
 
         .header__content {
             width: 50%;
+
+            .header__greetings {
+                font-size: index.$roboto32;
+            }
+
         }
 
         .header__figure {

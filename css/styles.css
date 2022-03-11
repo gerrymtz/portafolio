@@ -129,6 +129,9 @@ body {
 .header .header__container .header__content {
   width: 50%;
 }
+.header .header__container .header__content .header__greetings {
+  font-size: 32px;
+}
 .header .header__container .header__figure {
   width: 45%;
 }
