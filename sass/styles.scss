@@ -1,5 +1,9 @@
 @use "index/index";
 
+:root {
+    --image-gallery: url(../assets/images/cerveza.jpg);
+}
+
 *,
 ::after,
 ::before {
@@ -22,6 +26,11 @@ body {
     @include index.setNavContainer;
 }
 
+::selection {
+    background-color: index.$activeColor;
+    color: black;
+}
+
 .header {
     height: auto;
     padding-top: 0.1px;
@@ -38,6 +47,7 @@ body {
         top: 0;
         left: 0;
         right: 0;
+        z-index: 1;
 
         .nav__container {
             height: index.$heightNavDesk;
@@ -53,6 +63,7 @@ body {
                     color: white;
                     font-size: index.$roboto24;
                     font-weight: index.$robotoW500;
+                    letter-spacing: 2px;
                 }
 
             }
@@ -132,7 +143,28 @@ body {
             width: 50%;
 
             .header__greetings {
-                font-size: index.$roboto32;
+                font-size: index.$roboto24;
+                font-weight: index.$robotoW300;
+            }
+
+            .header__name {
+                font-size: index.$roboto64;
+                font-weight: index.$robotoW700;
+                margin: 20px 0 30px;
+            }
+
+            .header__profile {
+                font-size: index.$roboto24;
+                font-weight: index.$robotoW500;
+                color: index.$primaryColor;
+                margin-bottom: 30px;
+                letter-spacing: 3px;
+            }
+
+            .header__paragraph {
+                font-size: index.$roboto16;
+                font-weight: index.$robotoW400;
+                line-height: 1.5;
             }
 
         }
@@ -153,9 +185,436 @@ body {
 }
 
 .main {
-    height: 500px;
 
     .about {
+        height: auto;
+        padding-top: 0.1px;
+
+        .about__container {
+            @include index.setHeightMarginTop;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-family: index.$roboto;
+
+            .about__figure {
+                width: 45%;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    border-top: 5px solid index.$primaryColor;
+                    border-left: 5px solid index.$primaryColor;
+                    border-radius: 15px 0 0 0;
+                    width: 40%;
+                    height: 40%;
+                    position: absolute;
+                    top: -20px;
+                    right: 0;
+                    bottom: 0;
+                    left: 20px;
+                }
+
+                .about__img {
+                    width: 85%;
+                    display: block;
+                    object-fit: cover;
+                    border-radius: 15px;
+                    margin: 0 auto;
+                }
+
+            }
+
+            .about__info {
+                width: 50%;
+                font-family: index.$roboto;
+
+                .about__title {
+                    @include index.setTitle;
+                }
+
+                .about__subtitle {
+                    @include index.setSubTitle;
+                }
+
+                .about__paragraph {
+                    @include index.setParagraph;
+
+                    .about__mark {
+                        color: index.$activeColor;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .cards {
+        height: auto;
+        background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+
+        .cards__container {
+            color: white;
+            font-family: index.$roboto;
+
+            .cards__title {
+                @include index.setTitle;
+                text-align: center;
+            }
+
+            .cards__subtitle {
+                text-align: center;
+                @include index.setSubTitle;
+            }
+
+            .cards__content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-auto-rows: max-content;
+                place-items: center;
+                gap: 30px;
+
+                .card {
+                    width: 80%;
+                    background-color: index.$color-bgCard;
+                    padding: 30px;
+                    border-radius: 10px;
+                    position: relative;
+                    transition: 500ms all ease-in-out;
+                    @include index.hoverCard;
+
+                    .card__img {
+                        width: 60px;
+                        height: 60px;
+                        display: block;
+                        object-fit: cover;
+                        filter: drop-shadow(0 0 3px index.$activeColor);
+                        @include index.keyframeCard;
+                    }
+
+                    .card__title {
+                        margin-top: 20px;
+                        font-size: index.$roboto16;
+                    }
+
+                    .card__paragraph {
+                        @include index.setParagraph;
+                        margin-top: 20px;
+                    }
+
+                    @include index.colorCard(1, index.$color-card-1);
+                    @include index.colorCard(2, index.$color-card-2);
+                    @include index.colorCard(3, index.$color-card-3);
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .intereses {
+        height: auto;
+        padding-top: 0.1px;
+        background-image: url(../assets/images/background_gallery.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+
+        .intereses__container {
+            @include index.setHeightMarginTop;
+            font-family: index.$roboto;
+            color: white;
+
+            .intereses__title {
+                @include index.setSubTitle;
+                color: white;
+            }
+
+            .intereses__content {
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+
+                .intereses__item {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .intereses__info {
+                        width: 45%;
+                        padding: 30px 40px;
+                        background-color: rgba(0, 0, 0, 0.4);
+                        border-radius: 15px;
+
+                        .card__title {
+                            margin-bottom: 20px;
+                            font-size: index.$roboto16;
+                        }
+
+                        .card__text {
+                            @include index.setParagraph;
+                        }
+
+                    }
+
+                    .intereses__link {
+                        width: 50%;
+
+                        .intereses__figure {
+                            width: 100%;
+                            height: 400px;
+                            overflow: hidden;
+                            border-radius: 10px;
+
+                            .intereses__img {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                transform: scale(1);
+                                transition: 200ms transform ease-in-out;
+                            }
+
+                        }
+
+                        &:hover .intereses__figure .intereses__img {
+                            transform: scale(1.25);
+                            transition: 400ms transform ease-in-out;
+                        }
+
+                    }
+
+                    &:nth-of-type(even) .intereses__link {
+                        order: -1;
+                    }
+
+                }
+
+            }
+
+        }
+
+        .modal__container {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.753);
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            clip-path: circle(0% at 100% 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 600ms clip-path 800ms ease-in-out;
+
+            .modal__img {
+                width: 60%;
+                height: 80%;
+                background-image: var(--image-gallery);
+                background-position: center;
+                background-size: cover;
+                position: relative;
+                transform: scale(0);
+                transition: 600ms transform ease-in-out;
+
+                .modal__close {
+                    background-color: crimson;
+                    color: white;
+                    font-family: index.$roboto;
+                    text-decoration: none;
+                    font-size: index.$roboto24;
+                    font-weight: index.$robotoW700;
+                    width: 40px;
+                    height: 40px;
+                    display: block;
+                    text-align: center;
+                    line-height: 40px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+
+            }
+
+            &:target {
+                clip-path: circle(160% at 100% 0);
+                transition: 600ms clip-path ease-in-out;
+
+                .modal__img {
+                    transform: scale(1);
+                    transition: 600ms transform 800ms ease-in-out;
+                }
+
+            }
+
+        }
+
+        .modal__container--2 {
+            --image-gallery: url(../assets/images/astronomia.jpg);
+        }
+
+        .modal__container--3 {
+            --image-gallery: url(../assets/images/diseño_web.jpg);
+        }
+
+        .modal__container--4 {
+            --image-gallery: url(../assets/images/finance.jpg);
+        }
+
+        .modal__container--5 {
+            --image-gallery: url(../assets/images/rammstein.jpg);
+        }
+
+        .modal__container--6 {
+            --image-gallery: url(../assets/images/sunset.jpg);
+        }
+
+        .modal__container--7 {
+            --image-gallery: url(../assets/images/soccer.jpg);
+        }
+
+        .modal__container--8 {
+            --image-gallery: url(../assets/images/videogames.jpg);
+        }
+
+    }
+
+    .proyectos {
+        height: auto;
+        padding-top: 0.1px;
+        background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+
+        .proyectos__container {
+            min-height: calc(690px - index.$heightNavDesk);
+            margin-top: index.$heightNavDesk;
+            color: white;
+            font-family: index.$roboto;
+
+            .proyectos__title {
+                @include index.setSubTitle;
+            }
+
+            .proyectos__content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-auto-rows: max-content;
+                gap: 40px;
+
+                .proyecto__card {
+                    width: 100%;
+                    height: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(8, 1fr);
+                    grid-template-rows: repeat(6, 1fr);
+
+                    .proyecto__info {
+                        padding: 20px;
+                        width: 100%;
+                        height: 100%;
+                        grid-column: 1 / 6;
+                        grid-row: 1 / 5;
+                        background-color: index.$color-bgCard;
+                        z-index: 1;
+                        border-radius: 10px;
+                        display: flex;
+                        flex-direction: column;
+
+                        .proyecto__title {
+                            margin-bottom: 10px;
+                            font-size: index.$roboto16;
+                        }
+
+                        .proyecto__paragraph {
+                            @include index.setParagraph;
+                            line-height: normal;
+                            flex: 1;
+                        }
+
+                        .proyecto__button {
+                            padding: 15px 30px;
+                            outline: none;
+                            background-color: transparent;
+                            border: 2px solid index.$activeColor;
+                            color: index.$activeColor;
+                            font-family: index.$roboto;
+                            font-size: index.$roboto16;
+                            font-weight: index.$robotoW500;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            text-align: center;
+                            text-decoration: none;
+                            position: relative;
+
+                            .button__text {
+                                position: relative;
+                                z-index: 1;
+                            }
+
+                            &::after {
+                                content: "";
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                background-color: index.$activeColor;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                clip-path: circle(0% at 0 0);
+                                transition: 200ms clip-path ease-in-out;
+                            }
+
+                            &:hover {
+
+                                &::after {
+                                    clip-path: circle(150% at 0 0);
+                                    transition: 200ms clip-path ease-in-out;
+                                }
+
+                                .button__text {
+                                    color: black;
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                    .proyecto__figure {
+                        width: 100%;
+                        height: 400px;
+                        grid-column: 3 / -1;
+                        grid-row: 2 / -1;
+                        filter: blur(3px);
+                        transition: 200ms filter ease-in-out;
+
+                        .proyecto__img {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            object-fit: cover;
+                            border-radius: 5px;
+                        }
+
+                    }
+
+                    &:hover .proyecto__figure {
+                        filter: blur(0);
+                        transition: 300ms filter ease-in-out;
+                    }
+
+                }
+
+            }
+
+        }
 
     }
 
