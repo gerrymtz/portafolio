@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 :root {
-  --image-gallery: url(../assets/images/cerveza.jpg);
+  --image-gallery: url(../assets/images/cerveza_modal.jpeg);
 }
 
 *,
@@ -356,7 +356,7 @@ body {
 .main .intereses {
   height: auto;
   padding-top: 0.1px;
-  background-image: url(../assets/images/background_gallery.jpg);
+  background-image: url(../assets/images/background_gallery.jpeg);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -415,7 +415,7 @@ body {
   transition: 200ms transform ease-in-out;
 }
 .main .intereses .intereses__container .intereses__content .intereses__item .intereses__link:hover .intereses__figure .intereses__img {
-  transform: scale(1.25);
+  transform: scale(1.2);
   transition: 400ms transform ease-in-out;
 }
 .main .intereses .intereses__container .intereses__content .intereses__item:nth-of-type(even) .intereses__link {
@@ -451,7 +451,7 @@ body {
   color: white;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 700;
   width: 40px;
   height: 40px;
@@ -471,25 +471,25 @@ body {
   transition: 600ms transform 800ms ease-in-out;
 }
 .main .intereses .modal__container--2 {
-  --image-gallery: url(../assets/images/astronomia.jpg);
+  --image-gallery: url(../assets/images/astronomia_modal.jpeg);
 }
 .main .intereses .modal__container--3 {
-  --image-gallery: url(../assets/images/diseño_web.jpg);
+  --image-gallery: url(../assets/images/diseño_web_modal.jpeg);
 }
 .main .intereses .modal__container--4 {
-  --image-gallery: url(../assets/images/finance.jpg);
+  --image-gallery: url(../assets/images/finance_modal.jpeg);
 }
 .main .intereses .modal__container--5 {
-  --image-gallery: url(../assets/images/rammstein.jpg);
+  --image-gallery: url(../assets/images/metal_modal.jpeg);
 }
 .main .intereses .modal__container--6 {
-  --image-gallery: url(../assets/images/sunset.jpg);
+  --image-gallery: url(../assets/images/sunset_modal.jpeg);
 }
 .main .intereses .modal__container--7 {
-  --image-gallery: url(../assets/images/soccer.jpg);
+  --image-gallery: url(../assets/images/soccer_modal.jpeg);
 }
 .main .intereses .modal__container--8 {
-  --image-gallery: url(../assets/images/videogames.jpg);
+  --image-gallery: url(../assets/images/videogames_modal.jpeg);
 }
 .main .proyectos {
   height: auto;
