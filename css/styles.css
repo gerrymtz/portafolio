@@ -114,13 +114,14 @@ body {
 }
 @media screen and (max-width: 820px) {
   .header .header__nav .nav__container {
-    height: 130px;
+    height: 160px;
     flex-direction: column;
     justify-content: space-evenly;
   }
 }
 .header .header__nav .nav__container .logo__link {
   text-decoration: none;
+  align-self: flex-start;
 }
 .header .header__nav .nav__container .logo__link .logo__title {
   color: white;
@@ -139,6 +140,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    row-gap: 12px;
   }
 }
 .header .header__nav .nav__container .nav__menu .nav__list {
@@ -220,7 +222,8 @@ body {
 }
 @media screen and (max-width: 820px) {
   .header .header__container {
-    margin-top: 130px;
+    min-height: calc(100vh - 160px);
+    margin-top: 160px;
     flex-direction: column-reverse;
   }
 }
@@ -308,7 +311,8 @@ body {
 }
 @media screen and (max-width: 820px) {
   .main .about .about__container {
-    margin-top: 130px;
+    min-height: calc(100vh - 160px);
+    margin-top: 160px;
     flex-direction: column-reverse;
     align-items: center;
     gap: 50px;
@@ -578,7 +582,8 @@ body {
 }
 @media screen and (max-width: 820px) {
   .main .intereses .intereses__container {
-    margin-top: 130px;
+    min-height: calc(100vh - 160px);
+    margin-top: 160px;
   }
 }
 .main .intereses .intereses__container .intereses__title {
@@ -767,7 +772,7 @@ body {
 }
 @media screen and (max-width: 820px) {
   .main .proyectos .proyectos__container {
-    margin-top: 130px;
+    margin-top: 160px;
   }
 }
 .main .proyectos .proyectos__container .proyectos__title {
@@ -903,7 +908,7 @@ body {
 }
 @media screen and (max-width: 820px) {
   .main .timeline .timeline__container {
-    margin-top: 130px;
+    margin-top: 160px;
   }
 }
 .main .timeline .timeline__container .timeline__title {
@@ -1180,7 +1185,7 @@ body {
 }
 @media screen and (max-width: 820px) {
   .main .tecnologias .tech__container {
-    margin-top: 130px;
+    margin-top: 160px;
   }
 }
 .main .tecnologias .tech__container .tech__title {
