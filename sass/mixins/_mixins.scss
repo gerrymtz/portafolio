@@ -26,7 +26,7 @@
     margin: 0 auto;
     padding: variables.$paddingDesktop;
     overflow: hidden;
-    outline: 2px solid red;
+    //outline: 2px solid red;
 }
 
 @mixin setNavContainer {
@@ -34,7 +34,7 @@
     max-width: 1300px;
     margin: 0 auto;
     overflow: hidden;
-    outline: 2px solid red;
+    //outline: 2px solid red;
 }
 
 @mixin setHeightMarginTop {
@@ -127,6 +127,38 @@
 
         to {
             transform: translateY(5px);
+        }
+
+    }
+}
+
+@mixin moveArrow($lenStar, $lenEnd, $deg, $duration) {
+    animation: $duration slideArrow infinite ease-in normal backwards;
+
+    @keyframes slideArrow {
+                        
+        from {
+            transform: translate($lenStar) rotate($deg);
+        }
+
+        to {
+            transform: translate($lenEnd) rotate($deg);
+        }
+
+    }
+}
+
+@mixin moveArrowEven($lenStar, $lenEnd, $deg, $duration) {
+    animation: $duration slideArrowEven infinite ease-in normal backwards;
+
+    @keyframes slideArrowEven {
+                        
+        from {
+            transform: translate($lenStar) rotate($deg);
+        }
+
+        to {
+            transform: translate($lenEnd) rotate($deg);
         }
 
     }
