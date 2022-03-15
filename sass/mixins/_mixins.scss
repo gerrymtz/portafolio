@@ -163,3 +163,19 @@
 
     }
 }
+
+@mixin moveArrowY($lenStar, $lenEnd, $deg, $duration) {
+    animation: $duration slideArrowY infinite ease-in normal backwards;
+
+    @keyframes slideArrowY {
+                        
+        from {
+            transform: translateY($lenStar) rotate($deg);
+        }
+
+        to {
+            transform: translateY($lenEnd) rotate($deg);
+        }
+
+    }
+}
