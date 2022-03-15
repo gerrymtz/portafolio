@@ -26,7 +26,6 @@
     margin: 0 auto;
     padding: variables.$paddingDesktop;
     overflow: hidden;
-    outline: 2px solid red;
 }
 
 @mixin setNavContainer {
@@ -34,7 +33,6 @@
     max-width: 1300px;
     margin: 0 auto;
     overflow: hidden;
-    outline: 2px solid red;
 }
 
 @mixin setHeightMarginTop {
@@ -43,7 +41,7 @@
 }
 
 @mixin buttonEffect {
-    animation: 1300ms efecto ease-in-out infinite alternate;
+    animation: 1300ms efecto 1600ms ease-in-out infinite alternate;
 
     @keyframes efecto {
 
@@ -178,4 +176,21 @@
         }
 
     }
+}
+
+@mixin headerKeyFrame($duration, $delay) {
+    animation: $duration raiseColumn $delay normal 1 forwards;
+
+    @keyframes raiseColumn {
+        
+        from {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        to {
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+
+    }
+
 }
