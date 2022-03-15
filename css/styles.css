@@ -466,7 +466,7 @@ body {
 }
 .main .cards .cards__container .cards__content .card {
   width: 100%;
-  height: max-content;
+  height: 500px;
   background-color: #3B3A54;
   padding: 30px;
   border-radius: 10px;
@@ -477,6 +477,11 @@ body {
   background-color: #0fb;
   color: black;
   transition: 400ms all ease-in-out;
+}
+@media screen and (max-width: 425px) {
+  .main .cards .cards__container .cards__content .card {
+    height: max-content;
+  }
 }
 .main .cards .cards__container .cards__content .card .card__img {
   width: 60px;

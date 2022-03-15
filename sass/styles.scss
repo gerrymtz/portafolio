@@ -433,13 +433,17 @@ body {
 
                 .card {
                     width: 100%;
-                    height: max-content;
+                    height: 500px;
                     background-color: index.$color-bgCard;
                     padding: 30px;
                     border-radius: 10px;
                     position: relative;
                     transition: 500ms all ease-in-out;
                     @include index.hoverCard;
+
+                    @media screen and (max-width: 425px) {
+                        height: max-content;
+                    }
 
                     .card__img {
                         width: 60px;
