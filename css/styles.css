@@ -121,7 +121,11 @@ body {
 }
 .header .header__nav .nav__container .logo__link {
   text-decoration: none;
-  align-self: flex-start;
+}
+@media screen and (max-width: 820px) {
+  .header .header__nav .nav__container .logo__link {
+    align-self: flex-start;
+  }
 }
 .header .header__nav .nav__container .logo__link .logo__title {
   color: white;
