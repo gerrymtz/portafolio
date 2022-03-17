@@ -371,10 +371,12 @@ body {
 .main .about .about__container .about__info {
   width: 50%;
   font-family: "Roboto", sans-serif;
+  column-count: 2;
 }
 @media screen and (max-width: 820px) {
   .main .about .about__container .about__info {
     width: 70%;
+    column-count: 1;
   }
 }
 @media screen and (max-width: 425px) {
