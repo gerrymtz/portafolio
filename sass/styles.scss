@@ -442,9 +442,9 @@ body {
 
                 .card {
                     width: 100%;
-                    height: 500px;
+                    min-height: 550px;
                     background-color: index.$color-bgCard;
-                    padding: 30px;
+                    padding: 30px 30px 60px;
                     border-radius: 10px;
                     position: relative;
                     transition: 500ms all ease-in-out;
@@ -511,7 +511,7 @@ body {
 
             .intereses__title {
                 @include index.setSubTitle;
-                color: white;
+                color: black;
 
                 @media screen and (max-width: 425px) {
                     font-size: index.$roboto24;
@@ -727,6 +727,7 @@ body {
 
             .proyectos__title {
                 @include index.setSubTitle;
+                color: black;
 
                 @media screen and (max-width: 425px) {
                     font-size: index.$roboto24;
@@ -742,7 +743,7 @@ body {
 
                 .proyecto__card {
                     width: 100%;
-                    height: 100%;
+                    height: 95%;
                     display: grid;
                     grid-template-columns: repeat(8, 1fr);
                     grid-template-rows: repeat(6, 1fr);
@@ -752,7 +753,7 @@ body {
                         width: 100%;
                         height: 100%;
                         grid-column: 1 / 6;
-                        grid-row: 1 / 5;
+                        grid-row: 1 / 6;
                         background-color: index.$color-bgCard;
                         z-index: 1;
                         border-radius: 10px;
@@ -883,6 +884,7 @@ body {
 
             .timeline__title {
                 @include index.setSubTitle;
+                color: black;
 
                 @media screen and (max-width: 425px) {
                     font-size: index.$roboto24;
@@ -1002,19 +1004,19 @@ body {
                     border-right: 10px solid index.$activeColor;
 
                     &:nth-of-type(odd) {
-                        @include index.moveArrow(-80%, 80%, 45deg, 1500ms);
+                        @include index.moveArrow(-80%, 80%, 45deg, 1750ms);
 
                         @media screen and (max-width: 425px) {
-                            @include index.moveArrowY(-80%, 60%, 135deg, 1500ms);
+                            @include index.moveArrowY(-80%, 60%, 135deg, 1750ms);
                         }
 
                     }
 
                     &:nth-of-type(even) {
-                        @include index.moveArrowEven(80%, -80%, 225deg, 1500ms);
+                        @include index.moveArrowEven(80%, -80%, 225deg, 1750ms);
 
                         @media screen and (max-width: 425px) {
-                            @include index.moveArrowY(-80%, 60%, 135deg, 1500ms);
+                            @include index.moveArrowY(-80%, 60%, 135deg, 1750ms);
                         }
 
                     }
@@ -1170,6 +1172,7 @@ body {
 
             .tech__title {
                 @include index.setSubTitle;
+                color: black;
 
                 @media screen and (max-width: 425px) {
                     font-size: index.$roboto24;
