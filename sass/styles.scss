@@ -291,6 +291,8 @@ body {
     .about {
         height: auto;
         padding-top: 0.1px;
+        background-image: linear-gradient(to top, #0250c5 0%, #d43f8d 100%);
+        background-attachment: fixed;
 
         .about__container {
             @include index.setHeightMarginTop;
@@ -494,9 +496,7 @@ body {
     .intereses {
         height: auto;
         padding-top: 0.1px;
-        background-image: url(../assets/images/background_gallery.jpeg);
-        background-position: center;
-        background-size: cover;
+        background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
         background-attachment: fixed;
 
         .intereses__container {
@@ -511,7 +511,6 @@ body {
 
             .intereses__title {
                 @include index.setSubTitle;
-                color: black;
 
                 @media screen and (max-width: 425px) {
                     font-size: index.$roboto24;

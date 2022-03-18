@@ -304,6 +304,8 @@ body {
 .main .about {
   height: auto;
   padding-top: 0.1px;
+  background-image: linear-gradient(to top, #0250c5 0%, #d43f8d 100%);
+  background-attachment: fixed;
 }
 .main .about .about__container {
   min-height: calc(100vh - 90px);
@@ -575,9 +577,7 @@ body {
 .main .intereses {
   height: auto;
   padding-top: 0.1px;
-  background-image: url(../assets/images/background_gallery.jpeg);
-  background-position: center;
-  background-size: cover;
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
   background-attachment: fixed;
 }
 .main .intereses .intereses__container {
@@ -596,7 +596,6 @@ body {
   font-size: 32px;
   font-weight: 500;
   margin-bottom: 30px;
-  color: black;
 }
 @media screen and (max-width: 425px) {
   .main .intereses .intereses__container .intereses__title {
