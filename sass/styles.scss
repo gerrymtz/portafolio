@@ -205,6 +205,11 @@ body {
             min-height: calc(100vh - index.$heightNavMob);
             margin-top: index.$heightNavMob;
             flex-direction: column-reverse;
+            gap: 50px;
+        }
+
+        @media screen and (max-width: 425px) {
+            gap: 25px;
         }
 
         .header__content {
