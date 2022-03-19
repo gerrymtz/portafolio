@@ -232,6 +232,11 @@ body {
     gap: 50px;
   }
 }
+@media screen and (max-width: 425px) {
+  .header .header__container {
+    gap: 25px;
+  }
+}
 .header .header__container .header__content {
   width: 50%;
 }
