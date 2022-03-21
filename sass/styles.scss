@@ -449,13 +449,17 @@ body {
 
                 .card {
                     width: 100%;
-                    min-height: 550px;
+                    height: 100%;
                     background-color: index.$color-bgCard;
-                    padding: 30px 30px 60px;
+                    padding: 30px 20px 40px;
                     border-radius: 10px;
                     position: relative;
                     transition: 500ms all ease-in-out;
                     @include index.hoverCard;
+
+                    @media screen and (max-width: 820px) {
+                        padding: 30px 20px 60px;
+                    }
 
                     @media screen and (max-width: 425px) {
                         height: max-content;

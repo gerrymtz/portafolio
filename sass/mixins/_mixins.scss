@@ -90,6 +90,7 @@
 }
 
 @mixin colorCard($position, $color) {
+
     &:nth-child(#{$position}) {
         &::after {
             content: "";
@@ -104,14 +105,17 @@
             border-radius: 0 0 10px 10px;
         }
     }
+
 }
 
 @mixin hoverCard {
+
     &:hover {
         background-color: colores.$primaryColor;
         color: black;
         transition: 400ms all ease-in-out;
     }
+    
 }
 
 @mixin keyframeCard {
