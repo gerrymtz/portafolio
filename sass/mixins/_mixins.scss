@@ -132,10 +132,11 @@
         }
 
     }
+
 }
 
-@mixin moveArrow($lenStar, $lenEnd, $deg, $duration) {
-    animation: $duration slideArrow infinite ease-in normal backwards;
+@mixin moveArrow($lenStar, $lenEnd, $deg, $duration, $playState) {
+    animation: $duration slideArrow infinite ease-in normal backwards $playState;
 
     @keyframes slideArrow {
                         
@@ -148,10 +149,11 @@
         }
 
     }
+
 }
 
-@mixin moveArrowEven($lenStar, $lenEnd, $deg, $duration) {
-    animation: $duration slideArrowEven infinite ease-in normal backwards;
+@mixin moveArrowEven($lenStar, $lenEnd, $deg, $duration, $playState) {
+    animation: $duration slideArrowEven infinite ease-in normal backwards $playState;
 
     @keyframes slideArrowEven {
                         
@@ -164,10 +166,11 @@
         }
 
     }
+
 }
 
 @mixin moveArrowY($lenStar, $lenEnd, $deg, $duration) {
-    animation: $duration slideArrowY infinite ease-in normal backwards;
+    animation: $duration slideArrowY infinite ease-in normal backwards running;
 
     @keyframes slideArrowY {
                         
@@ -180,6 +183,7 @@
         }
 
     }
+
 }
 
 @mixin headerKeyFrame($duration, $delay) {
