@@ -111,20 +111,8 @@ body {
   align-items: center;
   font-family: "Roboto", sans-serif;
 }
-@media screen and (max-width: 820px) {
-  .header .header__nav .nav__container {
-    height: 160px;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-}
 .header .header__nav .nav__container .logo__link {
   text-decoration: none;
-}
-@media screen and (max-width: 820px) {
-  .header .header__nav .nav__container .logo__link {
-    align-self: flex-start;
-  }
 }
 .header .header__nav .nav__container .logo__link .logo__title {
   color: white;
@@ -137,39 +125,88 @@ body {
     font-size: 16px;
   }
 }
+.header .header__nav .nav__container .nav__menu .nav__input {
+  display: none;
+}
+.header .header__nav .nav__container .nav__menu .nav__input:checked + .nav__icons .nav__icon--show {
+  transform: scale(0);
+  transition: none;
+}
+.header .header__nav .nav__container .nav__menu .nav__input:checked + .nav__icons .nav__icon--close {
+  transform: scale(1);
+  transition: 200ms transform ease-in;
+}
+.header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__items {
+  transform: translate(0);
+  transition: 500ms transform ease-in;
+}
+.header .header__nav .nav__container .nav__menu .nav__icons {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+.header .header__nav .nav__container .nav__menu .nav__icons .nav__icon {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  width: 50px;
+  height: 50px;
+  display: block;
+  cursor: pointer;
+}
 @media screen and (max-width: 425px) {
-  .header .header__nav .nav__container .nav__menu {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    row-gap: 12px;
+  .header .header__nav .nav__container .nav__menu .nav__icons .nav__icon {
+    width: 40px;
+    height: 40px;
   }
 }
-.header .header__nav .nav__container .nav__menu .nav__list {
+.header .header__nav .nav__container .nav__menu .nav__icons .nav__icon--close {
+  transform: scale(0);
+  transition: none;
+}
+.header .header__nav .nav__container .nav__menu .nav__icons .nav__icon--show {
+  transform: scale(1);
+  transition: 200ms transform ease-in;
+}
+.header .header__nav .nav__container .nav__menu .nav__items {
+  background-color: black;
+  position: fixed;
+  top: 90px;
+  right: 0;
+  bottom: 0;
+  width: 75%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+  padding: 0 80px;
+  transform: translate(100%);
+  transition: 300ms transform ease-in;
+}
+@media screen and (max-width: 425px) {
+  .header .header__nav .nav__container .nav__menu .nav__items {
+    padding: 0 40px;
+  }
+}
+.header .header__nav .nav__container .nav__menu .nav__items .nav__list {
   list-style-type: none;
-  display: inline-block;
-  margin-right: 20px;
+  cursor: pointer;
 }
-@media screen and (max-width: 425px) {
-  .header .header__nav .nav__container .nav__menu .nav__list {
-    margin-right: 0;
-  }
-}
-.header .header__nav .nav__container .nav__menu .nav__list .nav__link {
+.header .header__nav .nav__container .nav__menu .nav__items .nav__list .nav__link {
   color: white;
   text-decoration: none;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 24px;
 }
 @media screen and (max-width: 425px) {
-  .header .header__nav .nav__container .nav__menu .nav__list .nav__link {
-    font-size: 14px;
+  .header .header__nav .nav__container .nav__menu .nav__items .nav__list .nav__link {
+    font-size: 16px;
   }
 }
-.header .header__nav .nav__container .nav__menu .nav__list:last-child {
-  padding: 10px 30px;
-  border-radius: 20px;
+.header .header__nav .nav__container .nav__menu .nav__items .nav__list:last-child {
+  padding: 15px 0;
+  border-radius: 5px;
+  text-align: center;
   animation: 1300ms efecto 2200ms ease-in infinite alternate both running;
 }
 @keyframes efecto {
@@ -182,34 +219,30 @@ body {
     box-shadow: 0 0 20px #00ffbb;
   }
 }
-@media screen and (max-width: 425px) {
-  .header .header__nav .nav__container .nav__menu .nav__list:last-child {
-    padding: 5px 15px;
-  }
-}
-.header .header__nav .nav__container .nav__menu .nav__list:last-child .nav__link {
+.header .header__nav .nav__container .nav__menu .nav__items .nav__list:last-child .nav__link {
   color: black;
+  font-weight: 400;
 }
-.header .header__nav .nav__container .nav__menu .nav__list:last-child::after {
+.header .header__nav .nav__container .nav__menu .nav__items .nav__list:last-child::after {
   display: none;
 }
-.header .header__nav .nav__container .nav__menu .nav__list::after {
+.header .header__nav .nav__container .nav__menu .nav__items .nav__list::after {
   content: "";
   display: block;
   width: 100%;
   height: 2px;
   background-color: #0ff;
-  margin-top: 10px;
+  margin-top: 20px;
   transform: scale(0);
-  transform-origin: center;
-  transition: 200ms transform ease-in-out;
+  transform-origin: right;
+  transition: 500ms transform ease-in;
 }
-.header .header__nav .nav__container .nav__menu .nav__list:hover::after {
+.header .header__nav .nav__container .nav__menu .nav__items .nav__list:hover::after {
   transform: scale(1);
-  transform-origin: center;
-  transition: 200ms transform ease-in-out;
+  transform-origin: left;
+  transition: 300ms transform ease-in;
 }
-.header .header__nav .nav__container .nav__menu .nav__list:hover .nav__link:not(.nav__link[href="#contacto"]) {
+.header .header__nav .nav__container .nav__menu .nav__items .nav__list:hover .nav__link:not(.nav__link[href="#contacto"]) {
   color: #0ff;
 }
 .header .header__container {
@@ -225,8 +258,6 @@ body {
 }
 @media screen and (max-width: 820px) {
   .header .header__container {
-    min-height: calc(100vh - 160px);
-    margin-top: 160px;
     flex-direction: column-reverse;
     gap: 50px;
   }
@@ -322,8 +353,6 @@ body {
 }
 @media screen and (max-width: 820px) {
   .main .about .about__container {
-    min-height: calc(100vh - 160px);
-    margin-top: 160px;
     flex-direction: column-reverse;
     align-items: center;
     gap: 50px;
@@ -595,11 +624,6 @@ body {
   color: white;
   font-family: "Roboto", sans-serif;
 }
-@media screen and (max-width: 820px) {
-  .main .proyectos .proyectos__container {
-    margin-top: 160px;
-  }
-}
 .main .proyectos .proyectos__container .proyectos__title {
   font-size: 32px;
   font-weight: 500;
@@ -726,12 +750,6 @@ body {
   margin-top: 90px;
   font-family: "Roboto", sans-serif;
   color: white;
-}
-@media screen and (max-width: 820px) {
-  .main .intereses .intereses__container {
-    min-height: calc(100vh - 160px);
-    margin-top: 160px;
-  }
 }
 .main .intereses .intereses__container .intereses__title {
   font-size: 32px;
@@ -905,11 +923,6 @@ body {
   font-family: "Roboto", sans-serif;
   color: white;
 }
-@media screen and (max-width: 820px) {
-  .main .timeline .timeline__container {
-    margin-top: 160px;
-  }
-}
 .main .timeline .timeline__container .timeline__title {
   font-size: 32px;
   font-weight: 500;
@@ -1012,27 +1025,8 @@ body {
     grid-row: 18/19;
   }
 }
-.main .timeline .timeline__container .timeline__content .timeline__description:hover + .timeline__arrow:nth-of-type(odd) {
-  animation: 1s slideArrow infinite ease-in normal backwards running;
-}
-@keyframes slideArrow {
-  from {
-    transform: translate(-80%) rotate(45deg);
-  }
-  to {
-    transform: translate(80%) rotate(45deg);
-  }
-}
-.main .timeline .timeline__container .timeline__content .timeline__description:hover + .timeline__arrow:nth-of-type(even) {
-  animation: 1s slideArrowEven infinite ease-in normal backwards running;
-}
-@keyframes slideArrowEven {
-  from {
-    transform: translate(80%) rotate(225deg);
-  }
-  to {
-    transform: translate(-80%) rotate(225deg);
-  }
+.main .timeline .timeline__container .timeline__content .timeline__description:hover + .timeline__arrow {
+  animation-play-state: running;
 }
 .main .timeline .timeline__container .timeline__content .timeline__arrow {
   grid-column: 2/3;
@@ -1042,9 +1036,10 @@ body {
   border-right: 10px solid #0ff;
 }
 .main .timeline .timeline__container .timeline__content .timeline__arrow:nth-of-type(odd) {
-  animation: 1s slideArrow infinite ease-in normal backwards paused;
+  animation: 1s slideArrowOdd infinite ease-in normal both running;
+  animation-play-state: paused;
 }
-@keyframes slideArrow {
+@keyframes slideArrowOdd {
   from {
     transform: translate(-80%) rotate(45deg);
   }
@@ -1054,7 +1049,7 @@ body {
 }
 @media screen and (max-width: 425px) {
   .main .timeline .timeline__container .timeline__content .timeline__arrow:nth-of-type(odd) {
-    animation: 1200ms slideArrowY infinite ease-in normal backwards running;
+    animation: 1200ms slideArrowY infinite ease-in normal both running;
   }
   @keyframes slideArrowY {
     from {
@@ -1066,7 +1061,8 @@ body {
   }
 }
 .main .timeline .timeline__container .timeline__content .timeline__arrow:nth-of-type(even) {
-  animation: 1s slideArrowEven infinite ease-in normal backwards paused;
+  animation: 1s slideArrowEven infinite ease-in normal both running;
+  animation-play-state: paused;
 }
 @keyframes slideArrowEven {
   from {
@@ -1078,7 +1074,7 @@ body {
 }
 @media screen and (max-width: 425px) {
   .main .timeline .timeline__container .timeline__content .timeline__arrow:nth-of-type(even) {
-    animation: 1200ms slideArrowY infinite ease-in normal backwards running;
+    animation: 1200ms slideArrowY infinite ease-in normal both running;
   }
   @keyframes slideArrowY {
     from {
@@ -1205,11 +1201,6 @@ body {
   margin-top: 90px;
   font-family: "Roboto", sans-serif;
   color: white;
-}
-@media screen and (max-width: 820px) {
-  .main .tecnologias .tech__container {
-    margin-top: 160px;
-  }
 }
 .main .tecnologias .tech__container .tech__title {
   font-size: 32px;

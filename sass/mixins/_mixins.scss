@@ -135,51 +135,17 @@
 
 }
 
-@mixin moveArrow($lenStar, $lenEnd, $deg, $duration, $playState) {
-    animation: $duration slideArrow infinite ease-in normal backwards $playState;
+@mixin moveArrow($lenStar, $lenEnd, $deg, $duration, $keyFrameName, $translate) {
+    animation: $duration $keyFrameName infinite ease-in normal both running;
 
-    @keyframes slideArrow {
-                        
+    @keyframes #{$keyFrameName} {
+
         from {
-            transform: translate($lenStar) rotate($deg);
+            transform: #{$translate}($lenStar) rotate($deg);
         }
 
         to {
-            transform: translate($lenEnd) rotate($deg);
-        }
-
-    }
-
-}
-
-@mixin moveArrowEven($lenStar, $lenEnd, $deg, $duration, $playState) {
-    animation: $duration slideArrowEven infinite ease-in normal backwards $playState;
-
-    @keyframes slideArrowEven {
-                        
-        from {
-            transform: translate($lenStar) rotate($deg);
-        }
-
-        to {
-            transform: translate($lenEnd) rotate($deg);
-        }
-
-    }
-
-}
-
-@mixin moveArrowY($lenStar, $lenEnd, $deg, $duration) {
-    animation: $duration slideArrowY infinite ease-in normal backwards running;
-
-    @keyframes slideArrowY {
-                        
-        from {
-            transform: translateY($lenStar) rotate($deg);
-        }
-
-        to {
-            transform: translateY($lenEnd) rotate($deg);
+            transform: #{$translate}($lenEnd) rotate($deg);
         }
 
     }
