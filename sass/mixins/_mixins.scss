@@ -41,7 +41,7 @@
 }
 
 @mixin buttonEffect {
-    animation: 1300ms efecto 1600ms ease-in-out infinite alternate;
+    animation: 1300ms efecto 2200ms ease-in infinite alternate both running;
 
     @keyframes efecto {
 
@@ -187,7 +187,7 @@
 }
 
 @mixin headerKeyFrame($duration, $delay) {
-    animation: $duration raiseColumn $delay normal 1 forwards;
+    animation: $duration raiseColumn $delay ease-in-out normal 1 both running;
 
     @keyframes raiseColumn {
         
