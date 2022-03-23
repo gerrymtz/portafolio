@@ -139,6 +139,7 @@ body {
 .header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__items {
   transform: translate(0);
   transition: 500ms transform ease-in;
+  box-shadow: -30px 0 50px rgba(0, 0, 0, 0.5);
 }
 .header .header__nav .nav__container .nav__menu .nav__icons {
   display: grid;
@@ -182,6 +183,7 @@ body {
   padding: 0 80px;
   transform: translate(100%);
   transition: 300ms transform ease-in;
+  box-shadow: none;
 }
 @media screen and (max-width: 425px) {
   .header .header__nav .nav__container .nav__menu .nav__items {
@@ -236,6 +238,7 @@ body {
   transform: scale(0);
   transform-origin: right;
   transition: 500ms transform ease-in;
+  box-shadow: 0 0 5px #0ff;
 }
 .header .header__nav .nav__container .nav__menu .nav__items .nav__list:hover::after {
   transform: scale(1);
@@ -244,6 +247,7 @@ body {
 }
 .header .header__nav .nav__container .nav__menu .nav__items .nav__list:hover .nav__link:not(.nav__link[href="#contacto"]) {
   color: #0ff;
+  text-shadow: 0 0 10px #0ff;
 }
 .header .header__container {
   min-height: calc(100vh - 90px);
