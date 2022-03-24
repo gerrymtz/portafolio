@@ -134,7 +134,7 @@ body {
 }
 .header .header__nav .nav__container .nav__menu .nav__input:checked + .nav__icons .nav__icon--close {
   transform: scale(1);
-  transition: 200ms transform ease-in;
+  transition: none;
 }
 .header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__items {
   transform: translate(0);
@@ -166,9 +166,10 @@ body {
 }
 .header .header__nav .nav__container .nav__menu .nav__icons .nav__icon--show {
   transform: scale(1);
-  transition: 200ms transform ease-in;
+  transition: none;
 }
 .header .header__nav .nav__container .nav__menu .nav__items {
+  border-left: 3px solid #0ff;
   background-color: black;
   position: fixed;
   top: 90px;
@@ -879,19 +880,18 @@ body {
 }
 .main .intereses .modal__container .modal__img .modal__close {
   background-color: crimson;
-  color: white;
-  font-family: "Roboto", sans-serif;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 700;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   display: block;
-  text-align: center;
-  line-height: 40px;
   position: absolute;
   top: 0;
   right: 0;
+}
+.main .intereses .modal__container .modal__img .modal__close .modal__icon-close {
+  display: block;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 .main .intereses .modal__container:target {
   clip-path: circle(160% at 100% 0);
