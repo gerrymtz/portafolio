@@ -66,7 +66,7 @@ body {
     }
 
     .header__nav {
-        background-color: rgba(0, 0, 0, 0.75);
+        background-color: rgba(0, 0, 0, 0.9);
         height: auto;
         position: fixed;
         top: 0;
@@ -123,10 +123,45 @@ body {
 
                         }
 
-                        ~ .nav__items {
-                            transform: translate(0);
-                            transition: 500ms transform ease-in;
-                            box-shadow: -30px 0 50px rgba(0, 0, 0, 0.5);
+                        ~ .nav__modal {
+                            transform: scale(1);
+                            transition: none;
+
+                            .nav__items {
+                                transform: translate(0);
+                                transition: 300ms transform ease-in;
+                                box-shadow: -30px 0 50px rgba(0, 0, 0, 0.5);
+
+                                .nav__list {
+
+                                    &:not(:last-child) {
+                                        @include index.showOption(500ms, both);
+                                    }
+
+                                    &:nth-child(1) {
+                                        animation-delay: 300ms;
+                                    }
+
+                                    &:nth-child(2) {
+                                        animation-delay: 700ms;
+                                    }
+
+                                    &:nth-child(3) {
+                                        animation-delay: 1100ms;
+                                    }
+
+                                    &:nth-child(4) {
+                                        animation-delay: 1500ms;
+                                    }
+
+                                    &:nth-child(5) {
+                                        animation-delay: 1900ms;
+                                    }
+
+                                }
+
+                            }
+
                         }
 
                     }
@@ -165,87 +200,99 @@ body {
 
                 }
 
-                .nav__items {
-                    border-left: 3px solid index.$activeColor;
-                    background-color: black;
+                .nav__modal {
+                    background-color: rgba(0, 0, 0, 0.7);
                     position: fixed;
                     top: index.$heightNavDesk;
                     right: 0;
                     bottom: 0;
-                    width: 75%;
-                    max-width: 500px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: stretch;
-                    justify-content: space-evenly;
-                    padding: 0 80px;
-                    transform: translate(100%);
-                    transition: 300ms transform ease-in;
-                    box-shadow: none;
+                    left: 0;
+                    transform: scale(0);
+                    transition: 0ms transform 400ms;
 
-                    @media screen and (max-width: 425px) {
-                        padding: 0 40px;
-                    }
-
-                    .nav__list {
-                        list-style-type: none;
-                        cursor: pointer;
+                    .nav__items {
+                        border-left: 3px solid index.$activeColor;
+                        background-color: #282828;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 60%;
+                        max-width: 500px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: stretch;
+                        justify-content: space-evenly;
+                        padding: 0 80px;
+                        transform: translate(100%);
+                        transition: 300ms transform ease-in;
+                        box-shadow: none;
     
-                        .nav__link {
-                            color: white;
-                            text-decoration: none;
-                            font-weight: index.$robotoW300;
-                            font-size: index.$roboto24;
-    
-                            @media screen and (max-width: 425px) {
-                                font-size: index.$roboto16;
-                            }
-    
+                        @media screen and (max-width: 425px) {
+                            padding: 0 30px;
                         }
     
-                        &:last-child {
-                            padding: 15px 0;
-                            border-radius: 5px;
-                            text-align: center;
-                            @include index.buttonEffect;
-    
+                        .nav__list {
+                            list-style-type: none;
+                            cursor: pointer;
+        
                             .nav__link {
-                                color: black;
-                                font-weight: index.$robotoW400;
+                                color: white;
+                                text-decoration: none;
+                                font-weight: index.$robotoW300;
+                                font-size: index.$roboto24;
+        
+                                @media screen and (max-width: 425px) {
+                                    font-size: index.$roboto16;
+                                }
+        
                             }
-    
+        
+                            &:last-child {
+                                padding: 15px 0;
+                                border-radius: 5px;
+                                text-align: center;
+                                @include index.buttonEffect;
+        
+                                .nav__link {
+                                    color: black;
+                                    font-weight: index.$robotoW400;
+                                }
+        
+                                &::after {
+                                    display: none;
+                                }
+        
+                            }
+        
                             &::after {
-                                display: none;
+                                content: "";
+                                display: block;
+                                width: 100%;
+                                height: 2px;
+                                background-color: index.$activeColor;
+                                margin-top: 20px;
+                                transform: scale(0);
+                                transform-origin: right;
+                                transition: 500ms transform ease-in;
+                                box-shadow: 0 0 5px index.$activeColor;
                             }
-    
-                        }
-    
-                        &::after {
-                            content: "";
-                            display: block;
-                            width: 100%;
-                            height: 2px;
-                            background-color: index.$activeColor;
-                            margin-top: 20px;
-                            transform: scale(0);
-                            transform-origin: right;
-                            transition: 500ms transform ease-in;
-                            box-shadow: 0 0 5px index.$activeColor;
-                        }
-    
-                        &:hover {
-    
-                            &::after {
-                                transform: scale(1);
-                                transform-origin: left;
-                                transition: 300ms transform ease-in;
+        
+                            &:hover {
+        
+                                &::after {
+                                    transform: scale(1);
+                                    transform-origin: left;
+                                    transition: 300ms transform ease-in;
+                                }
+        
+                                .nav__link:not(.nav__link[href="#contacto"]) {
+                                    color: index.$activeColor;
+                                    text-shadow: 0 0 10px index.$activeColor;
+                                }
+        
                             }
-    
-                            .nav__link:not(.nav__link[href="#contacto"]) {
-                                color: index.$activeColor;
-                                text-shadow: 0 0 10px index.$activeColor;
-                            }
-    
+        
                         }
     
                     }

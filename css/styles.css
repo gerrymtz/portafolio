@@ -96,7 +96,7 @@ body {
   }
 }
 .header .header__nav {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.9);
   height: auto;
   position: fixed;
   top: 0;
@@ -136,10 +136,42 @@ body {
   transform: scale(1);
   transition: none;
 }
-.header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__items {
+.header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__modal {
+  transform: scale(1);
+  transition: none;
+}
+.header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__modal .nav__items {
   transform: translate(0);
-  transition: 500ms transform ease-in;
+  transition: 300ms transform ease-in;
   box-shadow: -30px 0 50px rgba(0, 0, 0, 0.5);
+}
+.header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__modal .nav__items .nav__list:not(:last-child) {
+  animation: 500ms showOptionMenu normal 1 ease-in both;
+}
+@keyframes showOptionMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__modal .nav__items .nav__list:nth-child(1) {
+  animation-delay: 300ms;
+}
+.header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__modal .nav__items .nav__list:nth-child(2) {
+  animation-delay: 700ms;
+}
+.header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__modal .nav__items .nav__list:nth-child(3) {
+  animation-delay: 1100ms;
+}
+.header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__modal .nav__items .nav__list:nth-child(4) {
+  animation-delay: 1500ms;
+}
+.header .header__nav .nav__container .nav__menu .nav__input:checked ~ .nav__modal .nav__items .nav__list:nth-child(5) {
+  animation-delay: 1900ms;
 }
 .header .header__nav .nav__container .nav__menu .nav__icons {
   display: grid;
@@ -168,14 +200,24 @@ body {
   transform: scale(1);
   transition: none;
 }
-.header .header__nav .nav__container .nav__menu .nav__items {
-  border-left: 3px solid #0ff;
-  background-color: black;
+.header .header__nav .nav__container .nav__menu .nav__modal {
+  background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 90px;
   right: 0;
   bottom: 0;
-  width: 75%;
+  left: 0;
+  transform: scale(0);
+  transition: 0ms transform 400ms;
+}
+.header .header__nav .nav__container .nav__menu .nav__modal .nav__items {
+  border-left: 3px solid #0ff;
+  background-color: #282828;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60%;
   max-width: 500px;
   display: flex;
   flex-direction: column;
@@ -187,26 +229,26 @@ body {
   box-shadow: none;
 }
 @media screen and (max-width: 425px) {
-  .header .header__nav .nav__container .nav__menu .nav__items {
-    padding: 0 40px;
+  .header .header__nav .nav__container .nav__menu .nav__modal .nav__items {
+    padding: 0 30px;
   }
 }
-.header .header__nav .nav__container .nav__menu .nav__items .nav__list {
+.header .header__nav .nav__container .nav__menu .nav__modal .nav__items .nav__list {
   list-style-type: none;
   cursor: pointer;
 }
-.header .header__nav .nav__container .nav__menu .nav__items .nav__list .nav__link {
+.header .header__nav .nav__container .nav__menu .nav__modal .nav__items .nav__list .nav__link {
   color: white;
   text-decoration: none;
   font-weight: 300;
   font-size: 24px;
 }
 @media screen and (max-width: 425px) {
-  .header .header__nav .nav__container .nav__menu .nav__items .nav__list .nav__link {
+  .header .header__nav .nav__container .nav__menu .nav__modal .nav__items .nav__list .nav__link {
     font-size: 16px;
   }
 }
-.header .header__nav .nav__container .nav__menu .nav__items .nav__list:last-child {
+.header .header__nav .nav__container .nav__menu .nav__modal .nav__items .nav__list:last-child {
   padding: 15px 0;
   border-radius: 5px;
   text-align: center;
@@ -222,14 +264,14 @@ body {
     box-shadow: 0 0 20px #00ffbb;
   }
 }
-.header .header__nav .nav__container .nav__menu .nav__items .nav__list:last-child .nav__link {
+.header .header__nav .nav__container .nav__menu .nav__modal .nav__items .nav__list:last-child .nav__link {
   color: black;
   font-weight: 400;
 }
-.header .header__nav .nav__container .nav__menu .nav__items .nav__list:last-child::after {
+.header .header__nav .nav__container .nav__menu .nav__modal .nav__items .nav__list:last-child::after {
   display: none;
 }
-.header .header__nav .nav__container .nav__menu .nav__items .nav__list::after {
+.header .header__nav .nav__container .nav__menu .nav__modal .nav__items .nav__list::after {
   content: "";
   display: block;
   width: 100%;
@@ -241,12 +283,12 @@ body {
   transition: 500ms transform ease-in;
   box-shadow: 0 0 5px #0ff;
 }
-.header .header__nav .nav__container .nav__menu .nav__items .nav__list:hover::after {
+.header .header__nav .nav__container .nav__menu .nav__modal .nav__items .nav__list:hover::after {
   transform: scale(1);
   transform-origin: left;
   transition: 300ms transform ease-in;
 }
-.header .header__nav .nav__container .nav__menu .nav__items .nav__list:hover .nav__link:not(.nav__link[href="#contacto"]) {
+.header .header__nav .nav__container .nav__menu .nav__modal .nav__items .nav__list:hover .nav__link:not(.nav__link[href="#contacto"]) {
   color: #0ff;
   text-shadow: 0 0 10px #0ff;
 }
