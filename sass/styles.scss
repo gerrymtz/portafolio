@@ -201,14 +201,14 @@ body {
                 }
 
                 .nav__modal {
-                    background-color: rgba(0, 0, 0, 0.7);
+                    background-color: rgba(0, 0, 0, 0.6);
                     position: fixed;
                     top: index.$heightNavDesk;
                     right: 0;
                     bottom: 0;
                     left: 0;
                     transform: scale(0);
-                    transition: 0ms transform 400ms;
+                    transition: 0ms transform 300ms;
 
                     .nav__items {
                         border-left: 3px solid index.$activeColor;
