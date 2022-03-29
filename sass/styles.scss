@@ -75,9 +75,8 @@ body {
         z-index: 2;
 
         .nav__container {
-            height: index.$heightNavDesk;
-            padding: 5px 0;
             display: flex;
+            height: index.$heightNavDesk;
             justify-content: space-between;
             align-items: center;
             font-family: index.$roboto;
