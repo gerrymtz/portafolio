@@ -317,7 +317,6 @@ body {
 
         @media screen and (max-width: 820px) {
             flex-direction: column-reverse;
-            gap: 50px;
         }
 
         .header__content {
@@ -325,6 +324,7 @@ body {
 
             @media screen and (max-width: 820px) {
                 width: 70%;
+                margin-top: 50px;
             }
 
             @media screen and (max-width: 425px) {
@@ -417,7 +417,6 @@ body {
             @media screen and (max-width: 820px) {
                 flex-direction: column-reverse;
                 align-items: center;
-                gap: 75px;
             }
 
             .about__figure {
@@ -426,6 +425,7 @@ body {
 
                 @media screen and (max-width: 820px) {
                     width: 70%;
+                    margin-top: 70px;
                 }
 
                 @media screen and (max-width: 425px) {
