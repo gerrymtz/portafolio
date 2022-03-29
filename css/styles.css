@@ -105,7 +105,8 @@ body {
   z-index: 2;
 }
 .header .header__nav .nav__container {
-  height: 90px;
+  height: 50px;
+  padding: 5px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -203,7 +204,7 @@ body {
 .header .header__nav .nav__container .nav__menu .nav__modal {
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
-  top: 90px;
+  top: 50px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -293,8 +294,8 @@ body {
   text-shadow: 0 0 10px #0ff;
 }
 .header .header__container {
-  min-height: calc(100vh - 90px);
-  margin-top: 90px;
+  min-height: calc(100vh - 50px);
+  margin-top: 50px;
   grid-column: 1/-1;
   grid-row: 1/-1;
   display: flex;
@@ -307,11 +308,6 @@ body {
   .header .header__container {
     flex-direction: column-reverse;
     gap: 50px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .header .header__container {
-    gap: 25px;
   }
 }
 .header .header__container .header__content {
@@ -391,8 +387,8 @@ body {
   background-attachment: fixed;
 }
 .main .about .about__container {
-  min-height: calc(100vh - 90px);
-  margin-top: 90px;
+  min-height: calc(100vh - 50px);
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
   color: white;
@@ -402,7 +398,7 @@ body {
   .main .about .about__container {
     flex-direction: column-reverse;
     align-items: center;
-    gap: 50px;
+    gap: 75px;
   }
 }
 .main .about .about__container .about__figure {
@@ -667,7 +663,7 @@ body {
 }
 .main .proyectos .proyectos__container {
   min-height: 690px;
-  margin-top: 90px;
+  margin-top: 50px;
   color: white;
   font-family: "Roboto", sans-serif;
 }
@@ -793,8 +789,8 @@ body {
   background-attachment: fixed;
 }
 .main .intereses .intereses__container {
-  min-height: calc(100vh - 90px);
-  margin-top: 90px;
+  min-height: calc(100vh - 50px);
+  margin-top: 50px;
   font-family: "Roboto", sans-serif;
   color: white;
 }
@@ -965,7 +961,7 @@ body {
 }
 .main .timeline .timeline__container {
   min-height: 690px;
-  margin-top: 90px;
+  margin-top: 50px;
   font-family: "Roboto", sans-serif;
   color: white;
 }
@@ -1244,7 +1240,7 @@ body {
 }
 .main .tecnologias .tech__container {
   min-height: 550px;
-  margin-top: 90px;
+  margin-top: 50px;
   font-family: "Roboto", sans-serif;
   color: white;
 }
